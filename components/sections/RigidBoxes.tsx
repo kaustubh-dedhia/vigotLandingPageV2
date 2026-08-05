@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { SplitTextReveal } from '@/components/animation/SplitTextReveal';
 import { SectionCounter } from '@/components/ui/SectionLabel';
 import { categories } from '@/data/categories';
+import { rigidBoxImage } from '@/data/photos';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,19 +20,11 @@ export function RigidBoxes() {
   const triggerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!sectionRef.current || !triggerRef.current) return;
+    if (!sectionRef.current) return;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const ctx = gsap.context(() => {
       if (!reducedMotion) {
-        ScrollTrigger.create({
-          trigger: triggerRef.current,
-          start: 'top top',
-          end: '+=80%',
-          pin: true,
-          pinSpacing: true,
-        });
-
         benefitRefs.current.forEach((el, i) => {
           if (!el) return;
           gsap.fromTo(
@@ -41,28 +34,17 @@ export function RigidBoxes() {
               opacity: 1,
               x: 0,
               scrollTrigger: {
-                trigger: triggerRef.current,
-                start: `${15 + i * 12}% top`,
-                end: `${30 + i * 12}% top`,
+                trigger: el,
+                start: 'top 85%',
+                end: 'top 60%',
                 scrub: true,
               },
             },
           );
         });
-
-        gsap.to(imageRef.current, {
-          scale: 1.05,
-          y: 30,
-          scrollTrigger: {
-            trigger: triggerRef.current,
-            start: 'top top',
-            end: '+=80%',
-            scrub: true,
-          },
-        });
-      } else {
-        gsap.set(benefitRefs.current, { opacity: 1, x: 0 });
       }
+
+      gsap.set(benefitRefs.current, { opacity: 1, x: 0 });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -72,14 +54,13 @@ export function RigidBoxes() {
     <section ref={sectionRef} id="rigid-boxes" className="relative bg-background"
     >
       <div
-        ref={triggerRef}
-        className="min-h-screen w-full flex items-center px-6 md:px-12 lg:px-16 py-20"
+        className="min-h-screen w-full flex items-center px-6 md:px-12 lg:px-16 pt-32 md:pt-20 pb-20"
       >
         <div className="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-5 relative h-[50vh] lg:h-[75vh]">
             <div ref={imageRef} className="absolute inset-0 overflow-hidden">
               <Image
-                src={category.imageSrc}
+                src={rigidBoxImage}
                 alt="Premium rigid box product photography"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
@@ -93,7 +74,7 @@ export function RigidBoxes() {
 
             <SplitTextReveal
               as="h2"
-              className="font-display font-extrabold uppercase text-forest leading-[0.9] tracking-[-0.02em] text-[clamp(54px,7vw,112px)]"
+              className="font-display font-extrabold uppercase text-forest leading-[0.9] tracking-[-0.02em] text-[clamp(40px,5.25vw,84px)]"
             >
               {category.title.join('\n')}
             </SplitTextReveal>

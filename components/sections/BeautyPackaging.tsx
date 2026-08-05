@@ -5,14 +5,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitTextReveal } from '@/components/animation/SplitTextReveal';
 import { MaskedImage } from '@/components/animation/MaskedImage';
+import { beautyImages } from '@/data/photos';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const images = [
-  { src: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1200&q=80', alt: 'Skincare packaging box', className: 'aspect-[3/4]', direction: 'left' as const, parallax: 25 },
-  { src: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1200&q=80', alt: 'Wellness beauty box', className: 'aspect-[4/5]', direction: 'right' as const, parallax: 40 },
-  { src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&q=80', alt: 'Product reveal kit', className: 'aspect-[16/10]', direction: 'bottom' as const, parallax: 15 },
-];
+const images = beautyImages;
 
 export function BeautyPackaging() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -31,7 +28,7 @@ export function BeautyPackaging() {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: panelRef.current,
-            start: 'top 85%',
+            start: 'top 95%',
             toggleActions: 'play none none none',
           },
         });
@@ -56,7 +53,7 @@ export function BeautyPackaging() {
 
           <SplitTextReveal
             as="h2"
-            className="mt-6 font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.02em] text-[clamp(54px,7vw,112px)]"
+            className="mt-6 font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.02em] text-[clamp(40px,5.25vw,84px)]"
           >
             BEAUTY
             PACKAGING

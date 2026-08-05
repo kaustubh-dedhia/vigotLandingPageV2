@@ -8,6 +8,7 @@ import { SplitTextReveal } from '@/components/animation/SplitTextReveal';
 import { GeometricPattern } from '@/components/animation/GeometricPattern';
 import { CircularArrowButton } from '@/components/ui/CircularArrowButton';
 import { wordmark, companyTagline } from '@/data/navigation';
+import { heroImage } from '@/data/photos';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,7 +91,7 @@ export function Hero() {
         <div className="lg:col-span-6 z-10 order-2 lg:order-1">
           <SplitTextReveal
             as="h1"
-            className="font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.03em] text-[clamp(72px,11vw,180px)]"
+            className="font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.03em] text-[clamp(54px,8.25vw,135px)]"
             trigger={true}
           >
             {wordmark}
@@ -110,7 +111,7 @@ export function Hero() {
             Complete packaging solutions for products designed to be remembered.
           </p>
 
-          <div className="mt-10 md:mt-14 flex items-center gap-6">
+          <div className="mt-10 md:mt-14 flex items-center gap-4 md:gap-6">
             <CircularArrowButton href="#rigid-boxes" label="Explore packaging" />
             <span className="text-xs uppercase tracking-widest text-sage">Explore Packaging</span>
           </div>
@@ -122,7 +123,7 @@ export function Hero() {
             className="absolute inset-0 lg:-right-16 lg:-top-8"
           >
             <Image
-              src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1600&q=80"
+              src={heroImage}
               alt="Premium rigid box packaging composition"
               fill
               priority
@@ -140,7 +141,7 @@ export function Hero() {
         <GeometricPattern animate={false} />
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-sage">
+      <div className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-sage">
         <span className="text-[10px] uppercase tracking-widest">Scroll</span>
         <div className="w-[1px] h-8 bg-sage/40 animate-pulse" />
       </div>

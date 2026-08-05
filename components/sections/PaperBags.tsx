@@ -6,24 +6,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { SplitTextReveal } from '@/components/animation/SplitTextReveal';
 import { MaskedImage } from '@/components/animation/MaskedImage';
+import { paperBagStripImages, paperBagLifestyleImages } from '@/data/photos';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const stripImages = [
-  'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=800&q=80',
-];
+const stripImages = paperBagStripImages;
 
-const lifestyleImages = [
-  { src: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=800&q=80', alt: 'Paper bag lifestyle shot', className: 'aspect-[4/5]', direction: 'left' as const },
-  { src: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80', alt: 'Colourful paper bags', className: 'aspect-[16/10]', direction: 'right' as const },
-];
+const lifestyleImages = paperBagLifestyleImages;
 
 export function PaperBags() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -42,7 +31,7 @@ export function PaperBags() {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 75%',
+            start: 'top 90%',
             toggleActions: 'play none none none',
           },
         });
@@ -76,7 +65,7 @@ export function PaperBags() {
 
         <SplitTextReveal
           as="h2"
-          className="mt-6 font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.02em] text-[clamp(54px,9vw,140px)]"
+          className="mt-6 font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.02em] text-[clamp(40px,6.75vw,105px)]"
         >
           PAPER
           BAGS

@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { SplitTextReveal } from '@/components/animation/SplitTextReveal';
 import { SectionCounter } from '@/components/ui/SectionLabel';
 import { categories } from '@/data/categories';
+import { mithaiImage } from '@/data/photos';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,7 +35,7 @@ export function MithaiBoxes() {
               ease: 'power4.inOut',
               scrollTrigger: {
                 trigger: el,
-                start: 'top 85%',
+                start: 'top 95%',
                 toggleActions: 'play none none none',
               },
             },
@@ -77,7 +78,7 @@ export function MithaiBoxes() {
             className="absolute inset-0"
           >
             <Image
-              src={category.imageSrc}
+              src={mithaiImage}
               alt="Mithai and dry fruit gift boxes"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -91,7 +92,7 @@ export function MithaiBoxes() {
 
           <SplitTextReveal
             as="h2"
-            className="font-display font-extrabold uppercase text-white leading-[0.9] tracking-[-0.02em] text-[clamp(54px,7vw,112px)]"
+            className="font-display font-extrabold uppercase text-white leading-[0.9] tracking-[-0.02em] text-[clamp(36px,4.725vw,76px)]"
           >
             {category.title.join('\n')}
           </SplitTextReveal>

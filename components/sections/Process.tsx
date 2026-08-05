@@ -66,7 +66,7 @@ export function Process() {
           >
             <SplitTextReveal
               as="h2"
-              className="font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.02em] text-[clamp(54px,7vw,112px)]"
+              className="font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.02em] text-[clamp(40px,5.25vw,84px)]"
             >
               {processHeading.join('\n')}
             </SplitTextReveal>

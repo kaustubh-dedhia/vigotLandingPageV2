@@ -6,15 +6,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { SplitTextReveal } from '@/components/animation/SplitTextReveal';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { chocolateImages } from '@/data/photos';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const images = [
-  { src: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=1200&q=80', alt: 'Chocolate box front view', width: 'w-[35%]' },
-  { src: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=1200&q=80', alt: 'Chocolate box detail', width: 'w-[25%]' },
-  { src: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1200&q=80', alt: 'Chocolate box open', width: 'w-[30%]' },
-  { src: 'https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80', alt: 'Chocolate box packaging', width: 'w-[22%]' },
-];
+const images = chocolateImages;
 
 export function ChocolatePackaging() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -39,7 +35,7 @@ export function ChocolatePackaging() {
               delay: i * 0.15,
               scrollTrigger: {
                 trigger: sectionRef.current,
-                start: 'top 75%',
+                start: 'top 90%',
                 toggleActions: 'play none none none',
               },
             },
@@ -75,7 +71,7 @@ export function ChocolatePackaging() {
           <span className="text-xs uppercase tracking-widest text-white/50">03 / PACKAGING CATEGORY</span>
           <SplitTextReveal
             as="h2"
-            className="mt-6 font-display font-extrabold uppercase text-white leading-[0.88] tracking-[-0.02em] text-[clamp(54px,9vw,140px)]"
+            className="mt-6 font-display font-extrabold uppercase text-white leading-[0.88] tracking-[-0.02em] text-[clamp(36px,6.075vw,95px)]"
           >
             CHOCOLATE
             PACKAGING

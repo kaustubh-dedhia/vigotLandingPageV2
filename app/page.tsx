@@ -8,6 +8,7 @@ import { CustomCursor } from '@/components/animation/CustomCursor';
 import { useLenis } from '@/hooks/useLenis';
 
 import { Hero } from '@/components/sections/Hero';
+import { SelectedWork } from '@/components/sections/SelectedWork';
 import { RigidBoxes } from '@/components/sections/RigidBoxes';
 import { MithaiBoxes } from '@/components/sections/MithaiBoxes';
 import { ChocolatePackaging } from '@/components/sections/ChocolatePackaging';
@@ -16,7 +17,6 @@ import { BeautyPackaging } from '@/components/sections/BeautyPackaging';
 import { HamperPackaging } from '@/components/sections/HamperPackaging';
 import { PaperBags } from '@/components/sections/PaperBags';
 import { Capabilities } from '@/components/sections/Capabilities';
-import { SelectedWork } from '@/components/sections/SelectedWork';
 import { Process } from '@/components/sections/Process';
 import { ContactCTA } from '@/components/sections/ContactCTA';
 
@@ -32,15 +32,15 @@ export default function Home() {
 
       <main className="bg-background">
         <Hero />
+        <SelectedWork />
         <RigidBoxes />
         <MithaiBoxes />
         <ChocolatePackaging />
-        <ToyGameBoxes />
         <BeautyPackaging />
         <HamperPackaging />
+        <ToyGameBoxes />
         <PaperBags />
         <Capabilities />
-        <SelectedWork />
         <Process />
         <ContactCTA />
       </main>

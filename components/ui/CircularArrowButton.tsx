@@ -38,7 +38,7 @@ export function CircularArrowButton({ href, onClick, label, className, dark = fa
       onMouseLeave={handleMouseLeave}
       aria-label={label || 'Continue'}
       className={cn(
-        'group relative flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full border transition-transform duration-200 ease-out',
+        'group relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border transition-transform duration-200 ease-out',
         dark ? 'border-white/40 hover:border-white text-white' : 'border-forest/40 hover:border-forest text-forest',
         className,
       )}

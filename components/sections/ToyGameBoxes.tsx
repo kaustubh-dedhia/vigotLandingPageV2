@@ -6,14 +6,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { SplitTextReveal } from '@/components/animation/SplitTextReveal';
 import { MaskedImage } from '@/components/animation/MaskedImage';
+import { gameImages } from '@/data/photos';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const images = [
-  { src: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1200&q=80', alt: 'Toy packaging box', className: 'col-span-6 md:col-span-5 aspect-[4/5]' },
-  { src: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1200&q=80', alt: 'Board game box detail', className: 'col-span-6 md:col-span-4 md:col-start-8 aspect-[3/4]' },
-  { src: 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1600&q=80', alt: 'Game packaging stack', className: 'col-span-12 md:col-span-6 md:col-start-4 aspect-[16/10]' },
-];
+const images = gameImages;
 
 export function ToyGameBoxes() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -32,7 +29,7 @@ export function ToyGameBoxes() {
           ease: 'power4.out',
           scrollTrigger: {
             trigger: panelRef.current,
-            start: 'top 90%',
+            start: 'top 95%',
             toggleActions: 'play none none none',
           },
         });
@@ -55,7 +52,7 @@ export function ToyGameBoxes() {
 
         <SplitTextReveal
           as="h2"
-          className="mt-6 font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.02em] text-[clamp(54px,9vw,140px)]"
+          className="mt-6 font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.02em] text-[clamp(40px,6.75vw,105px)]"
         >
           TOY &
           GAME BOXES

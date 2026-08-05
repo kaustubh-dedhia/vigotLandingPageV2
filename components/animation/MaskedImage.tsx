@@ -63,7 +63,7 @@ export function MaskedImage({
           delay,
           scrollTrigger: {
             trigger: wrapperRef.current,
-            start: 'top 85%',
+            start: 'top 95%',
             toggleActions: 'play none none none',
           },
           onComplete: () => setRevealed(true),

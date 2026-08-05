@@ -6,14 +6,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { SplitTextReveal } from '@/components/animation/SplitTextReveal';
 import { MaskedImage } from '@/components/animation/MaskedImage';
+import { hamperHeroImage, hamperCrops } from '@/data/photos';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const heroImage = { src: 'https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1600&q=80', alt: 'Large gift hamper packaging' };
-const crops = [
-  { src: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80', alt: 'Hamper detail crop', className: 'aspect-square', from: 'top' as const },
-  { src: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=800&q=80', alt: 'Festive hamper packaging', className: 'aspect-[4/5]', from: 'right' as const },
-];
+const heroImage = hamperHeroImage;
+const crops = hamperCrops;
 
 export function HamperPackaging() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -35,7 +33,7 @@ export function HamperPackaging() {
             ease: 'power3.out',
             scrollTrigger: {
               trigger: el,
-              start: 'top 85%',
+              start: 'top 95%',
               toggleActions: 'play none none none',
             },
           });
@@ -59,7 +57,7 @@ export function HamperPackaging() {
 
         <SplitTextReveal
           as="h2"
-          className="mt-6 mb-8 md:mb-12 font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.02em] text-[clamp(54px,9vw,140px)]"
+          className="mt-6 mb-8 md:mb-12 font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.02em] text-[clamp(40px,6.75vw,105px)]"
         >
           HAMPER
           PACKAGING

@@ -63,7 +63,7 @@ export function ContactCTA() {
           >
             <SplitTextReveal
               as="h2"
-              className="font-display font-extrabold uppercase text-white leading-[0.88] tracking-[-0.02em] text-[clamp(54px,9vw,140px)]"
+              className="font-display font-extrabold uppercase text-white leading-[0.88] tracking-[-0.02em] text-[clamp(40px,6.75vw,105px)]"
             >
               {contact.headline.join('\n')}
             </SplitTextReveal>
