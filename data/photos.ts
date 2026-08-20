@@ -91,7 +91,7 @@ export const chocolateImages = [
 export const gameImages = [
   { src: getClientPhotoPath('Games', 0), alt: 'Toy packaging box', className: 'col-span-6 md:col-span-5 aspect-[4/5]' },
   { src: getClientPhotoPath('Games', 1), alt: 'Board game box detail', className: 'col-span-6 md:col-span-4 md:col-start-8 aspect-[3/4]' },
-  { src: getClientPhotoPath('Games', 2), alt: 'Game packaging stack', className: 'col-span-12 md:col-span-6 md:col-start-4 aspect-[16/10]' },
+  { src: getClientPhotoPath('Games', 2), alt: 'Game packaging stack', className: 'col-span-12 md:col-span-6 md:col-start-4 aspect-[16/10]', objectPosition: 'center 85%' as const, parallax: 0 },
 ];
 
 export const beautyImages = [

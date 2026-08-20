@@ -21,6 +21,8 @@ interface MaskedImageProps {
   height?: number;
   priority?: boolean;
   sizes?: string;
+  objectFit?: 'cover' | 'contain';
+  objectPosition?: string;
   children?: React.ReactNode;
 }
 
@@ -36,6 +38,8 @@ export function MaskedImage({
   height,
   priority = false,
   sizes = '50vw',
+  objectFit = 'cover',
+  objectPosition,
   children,
 }: MaskedImageProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -100,7 +104,8 @@ export function MaskedImage({
           fill={fill && !width}
           width={fill ? undefined : width}
           height={fill ? undefined : height}
-          className="object-cover"
+          className={cn(objectFit === 'contain' ? 'object-contain' : 'object-cover')}
+          style={objectPosition ? { objectPosition } : undefined}
           sizes={sizes}
           priority={priority}
         />

@@ -9,7 +9,14 @@ import { capabilities, capabilitiesHeading } from '@/data/capabilities';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function Capabilities() {
+interface CapabilitiesProps {
+  onSectionEnter?: () => void;
+  onSectionLeave?: () => void;
+}
+
+export const SLOW_DURATION = 2.4;
+
+export function Capabilities({ onSectionEnter, onSectionLeave }: CapabilitiesProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -28,6 +35,16 @@ export function Capabilities() {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
+      const slowTrigger = ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        onEnter: () => onSectionEnter?.(),
+        onEnterBack: () => onSectionEnter?.(),
+        onLeave: () => onSectionLeave?.(),
+        onLeaveBack: () => onSectionLeave?.(),
+      });
+
       gsap.from('.capability-item', {
         y: 30,
         opacity: 0,
@@ -40,10 +57,14 @@ export function Capabilities() {
           toggleActions: 'play none none none',
         },
       });
+
+      return () => {
+        slowTrigger.kill();
+      };
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [onSectionEnter, onSectionLeave]);
 
   return (
     <section

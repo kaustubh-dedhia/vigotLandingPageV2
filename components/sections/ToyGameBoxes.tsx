@@ -68,7 +68,9 @@ export function ToyGameBoxes() {
               className={`${img.className} group cursor-pointer`}
               direction={index % 2 === 0 ? 'right' : 'left'}
               delay={index * 0.1}
-              parallax={index % 2 === 0 ? 20 : 35}
+              parallax={img.parallax ?? (index % 2 === 0 ? 20 : 35)}
+              objectFit={'objectFit' in img ? (img as { objectFit?: 'cover' | 'contain' }).objectFit : undefined}
+              objectPosition={'objectPosition' in img ? (img as { objectPosition?: string }).objectPosition : undefined}
             >
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-[1.03]" />
             </MaskedImage>
