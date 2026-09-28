@@ -68,7 +68,7 @@ export function ChocolatePackaging() {
     >
       <div className="bg-forest text-white px-6 md:px-12 lg:px-16 py-16 md:py-24">
         <div className="max-w-[1600px] mx-auto">
-          <span className="text-xs uppercase tracking-widest text-white/50">03 / PACKAGING CATEGORY</span>
+          <span className="text-xs uppercase tracking-widest text-white/50">02 / PACKAGING CATEGORY</span>
           <SplitTextReveal
             as="h2"
             className="mt-6 font-display font-extrabold uppercase text-white leading-[0.88] tracking-[-0.02em] text-[clamp(36px,6.075vw,95px)]"

@@ -49,7 +49,7 @@ export function BeautyPackaging() {
       <div className="max-w-[1600px] mx-auto mt-8 md:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center"
       >
         <div className="lg:col-span-5 order-2 lg:order-1">
-          <span className="text-xs uppercase tracking-widest text-sage">05 / PACKAGING CATEGORY</span>
+          <span className="text-xs uppercase tracking-widest text-sage">03 / PACKAGING CATEGORY</span>
 
           <SplitTextReveal
             as="h2"

@@ -42,3 +42,26 @@ export function SectionCounter({ number, label, className, dark = false }: Secti
     </div>
   );
 }
+
+interface SectionNumberProps {
+  index: number;
+  label: string;
+  className?: string;
+  dark?: boolean;
+}
+
+export function SectionNumber({ index, label, className, dark = false }: SectionNumberProps) {
+  return (
+    <div className={cn('flex items-baseline gap-3', className)}>
+      <span
+        className={cn(
+          'text-4xl md:text-5xl font-display font-extrabold leading-none',
+          dark ? 'text-white/20' : 'text-forest/20',
+        )}
+      >
+        {String(index).padStart(2, '0')}
+      </span>
+      <span className={cn('text-xs uppercase tracking-widest', dark ? 'text-white/60' : 'text-sage')}>{label}</span>
+    </div>
+  );
+}

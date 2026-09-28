@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { SplitTextReveal } from '@/components/animation/SplitTextReveal';
 import { GeometricPattern } from '@/components/animation/GeometricPattern';
 import { CircularArrowButton } from '@/components/ui/CircularArrowButton';
-import { wordmark, companyTagline } from '@/data/navigation';
+import { wordmark, companyTagline, heroSubtitle } from '@/data/navigation';
 import { heroImage } from '@/data/photos';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -89,6 +89,9 @@ export function Hero() {
     >
       <div className="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
         <div className="lg:col-span-6 z-10 order-2 lg:order-1">
+          <p className="mb-2 md:mb-3 text-sm md:text-base uppercase tracking-[0.25em] text-sage font-medium">
+            {heroSubtitle}
+          </p>
           <SplitTextReveal
             as="h1"
             className="font-display font-extrabold uppercase text-forest leading-[0.88] tracking-[-0.03em] text-[clamp(54px,8.25vw,135px)]"
@@ -141,10 +144,6 @@ export function Hero() {
         <GeometricPattern animate={false} />
       </div>
 
-      <div className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-sage">
-        <span className="text-[10px] uppercase tracking-widest">Scroll</span>
-        <div className="w-[1px] h-8 bg-sage/40 animate-pulse" />
-      </div>
     </section>
   );
 }

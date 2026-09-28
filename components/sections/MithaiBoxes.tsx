@@ -5,13 +5,14 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { SplitTextReveal } from '@/components/animation/SplitTextReveal';
-import { SectionCounter } from '@/components/ui/SectionLabel';
+import { SectionNumber } from '@/components/ui/SectionLabel';
 import { categories } from '@/data/categories';
 import { mithaiImage } from '@/data/photos';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const category = categories[1];
+const sectionIndex = 1;
 
 export function MithaiBoxes() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -88,7 +89,7 @@ export function MithaiBoxes() {
         </div>
 
         <div className="bg-forest text-white flex flex-col justify-center px-6 md:px-12 lg:px-20 py-16 lg:py-24">
-          <SectionCounter number={category.number} label={category.subtitle || 'PACKAGING CATEGORY'} dark className="mb-8" />
+          <SectionNumber index={sectionIndex} label={category.subtitle || 'PACKAGING CATEGORY'} dark className="mb-8" />
 
           <SplitTextReveal
             as="h2"

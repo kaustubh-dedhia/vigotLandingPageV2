@@ -16,13 +16,12 @@ import { ToyGameBoxes } from '@/components/sections/ToyGameBoxes';
 import { BeautyPackaging } from '@/components/sections/BeautyPackaging';
 import { HamperPackaging } from '@/components/sections/HamperPackaging';
 import { PaperBags } from '@/components/sections/PaperBags';
-import { Capabilities, SLOW_DURATION } from '@/components/sections/Capabilities';
 import { Process } from '@/components/sections/Process';
 import { ContactCTA } from '@/components/sections/ContactCTA';
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
-  const { setDuration, resetDuration } = useLenis();
+  useLenis();
 
   return (
     <>
@@ -40,10 +39,6 @@ export default function Home() {
         <HamperPackaging />
         <ToyGameBoxes />
         <PaperBags />
-        <Capabilities
-          onSectionEnter={() => setDuration(SLOW_DURATION)}
-          onSectionLeave={() => resetDuration()}
-        />
         <Process />
         <ContactCTA />
       </main>

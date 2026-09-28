@@ -70,7 +70,7 @@ export function RigidBoxes() {
           </div>
 
           <div className="lg:col-span-6 lg:col-start-7">
-            <SectionCounter number={category.number} label={category.subtitle || 'PACKAGING CATEGORY'} className="mb-8" />
+            <span className="text-xs uppercase tracking-widest text-sage mb-8 block">{category.subtitle || 'PACKAGING CATEGORY'}</span>
 
             <SplitTextReveal
               as="h2"

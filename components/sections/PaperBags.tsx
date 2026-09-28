@@ -61,7 +61,7 @@ export function PaperBags() {
       className="relative w-full bg-background px-6 md:px-12 lg:px-16 py-20 md:py-32"
     >
       <div className="max-w-[1600px] mx-auto">
-        <span className="text-xs uppercase tracking-widest text-sage">07 / PACKAGING CATEGORY</span>
+        <span className="text-xs uppercase tracking-widest text-sage">06 / PACKAGING CATEGORY</span>
 
         <SplitTextReveal
           as="h2"

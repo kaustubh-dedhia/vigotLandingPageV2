@@ -75,9 +75,9 @@ export const designsByVigot1 = folderPhotos('Designs by vigot 1');
 export const designsByVigot2 = folderPhotos('Designs by vigot 2');
 export const allVigotDesigns = [...designsByVigot1, ...designsByVigot2];
 
-export const heroImage = getClientPhotoPath('Designs by vigot 1', 0);
+export const heroImage = '/vigot-main.PNG';
 
-export const rigidBoxImage = getClientPhotoPath('Designs by vigot 2', 0);
+export const rigidBoxImage = '/client-photos/rigid-box-hero.PNG';
 export const mithaiImage = getClientPhotoPath('Mithai Box', 0);
 export const mithaiSecondaryImages = [getClientPhotoPath('Mithai Box', 1), getClientPhotoPath('Mithai Box', 2)];
 
@@ -95,9 +95,9 @@ export const gameImages = [
 ];
 
 export const beautyImages = [
-  { src: getClientPhotoPath('Cosmetic box', 0), alt: 'Skincare packaging box', className: 'aspect-[3/4]', direction: 'left' as const, parallax: 25 },
-  { src: getClientPhotoPath('Cosmetic box', 1), alt: 'Wellness beauty box', className: 'aspect-[4/5]', direction: 'right' as const, parallax: 40 },
-  { src: getClientPhotoPath('Cosmetic box', 2), alt: 'Product reveal kit', className: 'aspect-[16/10]', direction: 'bottom' as const, parallax: 15 },
+  { src: '/client-photos/Cosmetic box-drive/2DCB596D-57C1-4F1D-9E90-FFD7F3D41B22.PNG', alt: 'Skincare packaging box', className: 'aspect-[3/4]', direction: 'left' as const, parallax: 25 },
+  { src: '/client-photos/Cosmetic box-drive/43DD0E57-4ADA-4E95-BB52-350713DD0CE2.PNG', alt: 'Wellness beauty box', className: 'aspect-[4/5]', direction: 'right' as const, parallax: 40 },
+  { src: '/client-photos/Cosmetic box-drive/4CC416C6-FE68-493C-B8E3-23C39752EDC5.PNG', alt: 'Product reveal kit', className: 'aspect-[16/10]', direction: 'bottom' as const, parallax: 15 },
 ];
 
 export const hamperHeroImage = { src: getClientPhotoPath('Hampers', 0), alt: 'Large gift hamper packaging' };
@@ -114,63 +114,81 @@ export const paperBagLifestyleImages = [
 
 export const selectedWorkProjects: Project[] = [
   {
-    id: 'vigot-design-1',
+    id: 'selected-mithai',
     number: '01',
-    category: 'DESIGNS BY VIGOT',
-    format: 'Custom Box',
-    material: 'Rigid Board',
-    finish: 'Foil + Emboss',
-    imageSrc: getClientPhotoPath('Designs by vigot 1', 0),
-    crops: [getClientPhotoPath('Designs by vigot 1', 1), getClientPhotoPath('Designs by vigot 1', 2)] as [string, string],
-  },
-  {
-    id: 'vigot-design-2',
-    number: '02',
-    category: 'DESIGNS BY VIGOT',
-    format: 'Luxury Packaging',
-    material: 'Duplex Board',
-    finish: 'Matte Laminate',
-    imageSrc: getClientPhotoPath('Designs by vigot 1', 3),
-    crops: [getClientPhotoPath('Designs by vigot 2', 0), getClientPhotoPath('Designs by vigot 2', 1)] as [string, string],
-  },
-  {
-    id: 'vigot-design-3',
-    number: '03',
-    category: 'DESIGNS BY VIGOT',
-    format: 'Rigid Set',
-    material: 'SBS Paperboard',
-    finish: 'Soft-touch',
-    imageSrc: getClientPhotoPath('Designs by vigot 2', 2),
-    crops: [getClientPhotoPath('Designs by vigot 2', 3), getClientPhotoPath('Designs by vigot 2', 4)] as [string, string],
-  },
-  {
-    id: 'vigot-design-4',
-    number: '04',
-    category: 'FESTIVE GIFTING',
+    category: 'MITHAI & DRY FRUIT BOXES',
     format: 'Mithai Box',
     material: 'Food-safe Board',
     finish: 'Custom Print',
-    imageSrc: getClientPhotoPath('Mithai Box', 0),
-    crops: [getClientPhotoPath('Mithai Box', 1), getClientPhotoPath('Mithai Box', 2)] as [string, string],
+    imageSrc: '/client-photos/Mithai Box-drive/660255A2-5912-4349-8803-0E19A2B5B2F2.PNG',
+    crops: [
+      '/client-photos/Mithai Box-drive/4321C7F5-B01D-400F-A100-EECC0B5AF91C.PNG',
+      '/client-photos/Mithai Box-drive/73C27BAB-5392-452F-9BB4-49BA09C7D762.PNG',
+    ] as [string, string],
   },
   {
-    id: 'vigot-design-5',
-    number: '05',
-    category: 'CHOCOLATE',
+    id: 'selected-chocolate',
+    number: '02',
+    category: 'CHOCOLATE BOXES',
     format: 'Chocolate Box',
     material: 'SBS Paperboard',
     finish: 'Soft-touch Laminate',
-    imageSrc: getClientPhotoPath('Choclate box', 0),
-    crops: [getClientPhotoPath('Choclate box', 1), getClientPhotoPath('Choclate box', 2)] as [string, string],
+    imageSrc: '/client-photos/Choclate box-drive/C86F8CB3-8D3F-46DB-A95D-923756CC7A61.PNG',
+    crops: [
+      '/client-photos/Choclate box-drive/43E7CEEE-1B92-42C4-A6EF-9C727432CF9A.PNG',
+      '/client-photos/Choclate box-drive/620C4E99-2E92-44BD-A885-7B3C460A85E3.PNG',
+    ] as [string, string],
   },
   {
-    id: 'vigot-design-6',
-    number: '06',
-    category: 'BEAUTY',
+    id: 'selected-toys',
+    number: '03',
+    category: 'TOYS & GAMES',
+    format: 'Game Box',
+    material: 'Rigid Board',
+    finish: 'Matte Laminate',
+    imageSrc: '/client-photos/Games-drive/1B6C401B-3BE3-4C8B-9A98-31CE3B1A234A.PNG',
+    crops: [
+      '/client-photos/Games-drive/792B4AC1-D36C-44EA-91A0-B83ED51BA516.PNG',
+      '/client-photos/Games-drive/7C3F2687-D06C-4616-A160-959A861235B3.PNG',
+    ] as [string, string],
+  },
+  {
+    id: 'selected-beauty',
+    number: '04',
+    category: 'BEAUTY PACKAGING',
     format: 'Cosmetic Box',
     material: 'Art Paper',
     finish: 'Spot UV + Foil',
-    imageSrc: getClientPhotoPath('Cosmetic box', 0),
-    crops: [getClientPhotoPath('Cosmetic box', 1), getClientPhotoPath('Cosmetic box', 2)] as [string, string],
+    imageSrc: '/client-photos/Cosmetic box-drive/2DCB596D-57C1-4F1D-9E90-FFD7F3D41B22.PNG',
+    crops: [
+      '/client-photos/Cosmetic box-drive/43DD0E57-4ADA-4E95-BB52-350713DD0CE2.PNG',
+      '/client-photos/Cosmetic box-drive/AB0EAABF-C162-4773-BAD6-ADFC8FC6C6FF.PNG',
+    ] as [string, string],
+  },
+  {
+    id: 'selected-hampers',
+    number: '05',
+    category: 'CUSTOMISED HAMPERS',
+    format: 'Gift Hamper',
+    material: 'Duplex + Kraft',
+    finish: 'Ribbon Handle',
+    imageSrc: '/client-photos/Hampers-drive/1EDAD81C-5DED-40E0-9A5A-771C1C86EF1C.PNG',
+    crops: [
+      '/client-photos/Hampers-drive/456AFCCA-E40F-434C-9317-DA56EC665FC4.PNG',
+      '/client-photos/Hampers-drive/C3572672-97C6-4E55-9A81-85B87D1AEE80.PNG',
+    ] as [string, string],
+  },
+  {
+    id: 'selected-paper-bags',
+    number: '06',
+    category: 'PAPER BAGS',
+    format: 'Carry Bag',
+    material: 'Coloured Kraft',
+    finish: 'Cotton Handle',
+    imageSrc: '/client-photos/Paper bags-drive/FFACB59B-C655-4193-BC11-E9235F1B7944.PNG',
+    crops: [
+      '/client-photos/Paper bags-drive/422CE74A-C862-4BCC-B4B3-1CC4C402D346.PNG',
+      '/client-photos/Paper bags-drive/475A829D-9BC4-43FF-947D-3D6A2B86DD01.PNG',
+    ] as [string, string],
   },
 ];

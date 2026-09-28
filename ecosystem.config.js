@@ -2,10 +2,10 @@ module.exports = {
   apps: [
     {
       name: 'vigot',
-      script: './node_modules/.bin/next',
-      args: 'start --port 3000 --hostname 0.0.0.0',
+      script: '/home/ubuntu/.local/bin/npx',
+      args: 'serve /home/ubuntu/vigot/dist -l 3000 --no-clipboard',
       cwd: '/home/ubuntu/vigot',
-      interpreter: '/home/ubuntu/.hermes/node/bin/node',
+      interpreter: 'none',
       env: {
         NODE_ENV: 'production',
       },
