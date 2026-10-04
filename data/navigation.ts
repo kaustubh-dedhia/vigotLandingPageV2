@@ -13,4 +13,4 @@ export const navigation: NavLink[] = [
 
 export const wordmark = 'VIGOT';
 export const companyTagline = 'PRINTZ & PACK PVT LTD';
-export const heroSubtitle = '7 FOLDS BY';
+export const heroSubtitle = 'SEVEN FOLDS BY';

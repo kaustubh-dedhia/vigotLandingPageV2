@@ -3,10 +3,8 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SplitTextReveal } from '@/components/animation/SplitTextReveal';
-import { CircularArrowButton } from '@/components/ui/CircularArrowButton';
 import { GeometricPattern } from '@/components/animation/GeometricPattern';
-import { contact } from '@/data/contact';
+import { directors } from '@/data/contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,36 +55,31 @@ export function ContactCTA() {
         ref={contentRef}
         className="relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-16 py-20"
       >
-        <div className="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16"
-        >
-          <div className="lg:col-span-8"
-          >
-            <SplitTextReveal
-              as="h2"
-              className="font-display font-extrabold uppercase text-white leading-[0.88] tracking-[-0.02em] text-[clamp(40px,6.75vw,105px)]"
-            >
-              {contact.headline.join('\n')}
-            </SplitTextReveal>
+        <div className="max-w-[1600px] mx-auto w-full">
+          <div className="mb-12 md:mb-16">
+            <p className="text-xs uppercase tracking-widest text-white/50 mb-4">Leadership</p>
+            <h2 className="font-display font-extrabold uppercase text-white leading-[0.88] tracking-[-0.02em] text-[clamp(32px,4.5vw,64px)]">
+              Our Directors
+            </h2>
           </div>
 
-          <div className="lg:col-span-3 lg:col-start-10 flex flex-col justify-end"
-          >
-            <div className="space-y-6 text-sm md:text-base text-white/80"
-            >
-              <p className="text-white/50 text-xs uppercase tracking-widest">{contact.cta}</p>
-              <a href={`mailto:${contact.email}`} className="block hover:text-white transition-colors">{contact.email}</a>
-              <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="block hover:text-white transition-colors">{contact.phone}</a>
-              <p>{contact.location}</p>
-              <div className="flex gap-6 pt-2"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            {directors.map((director) => (
+              <div
+                key={director.name}
+                className="border-t border-white/20 pt-6"
               >
-                <a href={contact.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
-                <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+                <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-white">
+                  {director.name}
+                </h3>
+                <p className="mt-1 text-sm uppercase tracking-widest text-white/50">
+                  {director.role}
+                </p>
+                <p className="mt-6 text-sm md:text-base text-white/70 leading-relaxed">
+                  {director.description}
+                </p>
               </div>
-            </div>
-
-            <div className="mt-12">
-              <CircularArrowButton dark href={`mailto:${contact.email}`} label="Start a project" />
-            </div>
+            ))}
           </div>
         </div>
       </div>
